@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "version": "0.1.0",
+  "description": "See CONTRIBUTING.md for how to contribute to this project",
+  "type": "module",
+  "scripts": {
+    "build": "ncc build index.js --license licenses.txt"
+  },
+  "bugs": {
+    "url": "https://github.com/jameshenry/wait-for-nx-deployments/issues"
+  },
+  "homepage": "https://github.com/jameshenry/wait-for-nx-deployments#readme",
+  "dependencies": {
+    "@actions/core": "1.7.0",
+    "@actions/github": "5.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.26",
+    "@vercel/ncc": "^0.33.1"
+  }
+}

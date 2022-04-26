@@ -1,0 +1,27 @@
+name: Wait for Nx Project deployments
+description: Wait for Nx Project deployments
+
+inputs:
+  github-token:
+    description: The value of secrets.GITHUB_TOKEN
+    required: true
+  timeout:
+    description: The number of seconds after which to fail if no deployment is found.
+    default: 300
+  interval:
+    description: The number of seconds to wait between repeated checks for deployments.
+    default: 5
+  deployments-to-wait-for:
+    description: Mapping of Nx projects to their deployment names that should be waited for by this action
+    required: true
+  github-head-sha:
+    description: "Value of `github.event.pull_request.head.sha` for the PR"
+    required: true
+
+outputs:
+  deployments:
+    description: Stringified JSON of the deployments that were successfully awaited
+
+runs:
+  using: node16
+  main: index.js
